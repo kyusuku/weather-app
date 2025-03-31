@@ -126,7 +126,7 @@ async function getWeatherData(location) {
 
     toggle.classList.remove("hide");
     card.classList.add("showResult");
-    result.classList.remove("hide");
+    result.classList.add('showResult');
   } catch {
     result.innerHTML = "";
     const errorMessage = document.createElement("p");
@@ -138,7 +138,7 @@ async function getWeatherData(location) {
 
     toggle.classList.add("hide");
     card.classList.add("showResult");
-    result.classList.remove("hide");
+    result.classList.add('showResult');
   }
 }
 
