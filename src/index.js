@@ -23,6 +23,11 @@ const card = document.querySelector('.card');
 const searchBar = document.querySelector('.search-bar');
 const searchBtn = document.querySelector('.fa-search');
 const result = document.querySelector('.result');
+const toggle = document.querySelector('.switch');
+const toggleSwitch = document.querySelector('.switch input');
+
+let tempF = null;
+let feelsLike = null;
 
 function toCelsius(temp) {
     return (Math.round((temp - 32) * 5 / 9 * 10) / 10).toString();
@@ -73,9 +78,9 @@ async function getWeatherData(location) {
         const weatherData = await response.json();
 
         const location = weatherData.address;
-        const tempF = weatherData.currentConditions.temp;
+        tempF = weatherData.currentConditions.temp;
         const tempC = toCelsius(Number(tempF));
-        const feelsLike = weatherData.currentConditions.feelslike;
+        feelsLike = weatherData.currentConditions.feelslike;
         const humidity = weatherData.currentConditions.humidity;
         const windSpeed = weatherData.currentConditions.windspeed;
         const icon = weatherData.currentConditions.icon;
@@ -97,6 +102,7 @@ async function getWeatherData(location) {
         displayTemp.textContent = `${tempC}` + "\u00B0";
         displayTemp.style.fontSize = '30px';
         displayTemp.style.marginBottom = '20px';
+        displayTemp.classList.add('displayTemp');
 
         const displayHumidity = document.createElement('p');
         displayHumidity.textContent = `Humidity: ${humidity}%`;
@@ -106,6 +112,7 @@ async function getWeatherData(location) {
 
         const displayFeelsLike = document.createElement('p');
         displayFeelsLike.textContent = `Feels Like: ${toCelsius(Number(feelsLike))}` + "\u00B0";
+        displayFeelsLike.classList.add('displayFeelsLike');
 
         result.appendChild(displayLocation);
         result.appendChild(displayIconElement);
@@ -115,6 +122,7 @@ async function getWeatherData(location) {
         result.appendChild(displayFeelsLike);
         searchBar.value = '';
 
+        toggle.classList.remove('hide');
         card.classList.add('showResult');
         result.classList.remove('hide');
 
@@ -127,6 +135,7 @@ async function getWeatherData(location) {
         result.appendChild(errorMessage);
         searchBar.value = '';
 
+        toggle.classList.add('hide');
         card.classList.add('showResult');
         result.classList.remove('hide');
     }
@@ -139,5 +148,20 @@ searchBtn.addEventListener('click', () => {
 searchBar.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         getWeatherData(searchBar.value);
+    }
+});
+
+toggleSwitch.addEventListener('change', () => {
+    const displayTemp = document.querySelector('.displayTemp');
+    const displayFeelsLike = document.querySelector('.displayFeelsLike');
+
+    if (displayTemp && displayFeelsLike) {
+        if (toggleSwitch.checked) {
+            displayTemp.textContent = `${tempF}` + "\u00B0";
+            displayFeelsLike.textContent = `Feels Like: ${feelsLike}` + "\u00B0";
+        } else {
+            displayTemp.textContent = `${toCelsius(Number(tempF))}` + "\u00B0";
+            displayFeelsLike.textContent = `Feels Like: ${toCelsius(Number(feelsLike))}` + "\u00B0";
+        }
     }
 });
