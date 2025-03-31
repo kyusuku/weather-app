@@ -130,7 +130,7 @@ async function getWeatherData(location) {
   } catch {
     result.innerHTML = "";
     const errorMessage = document.createElement("p");
-    errorMessage.textContent = "Location not found.";
+    errorMessage.textContent = "Location not found";
     errorMessage.style.color = "red";
     errorMessage.style.textAlign = "center";
     result.appendChild(errorMessage);
