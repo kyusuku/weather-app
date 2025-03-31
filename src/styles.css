@@ -1,267 +1,307 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway+Dots);
 
 * {
-    font-family: "Roboto", sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    text-shadow: rgba(0,0,0,.01) 0 0 1px;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-    overflow: hidden;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+  overflow: hidden;
 
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Page background animation */
 
 .stars {
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    background: white;
-    box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
-      22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
-      38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
-      53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
-      68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
-      83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
-      98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
-      18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
-      35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
-      50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
-      65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
-      80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
-      95vw 75vh 2px white;
-    animation: twinkle 8s infinite linear;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background: white;
+  box-shadow:
+    2vw 5vh 2px white,
+    10vw 8vh 2px white,
+    15vw 15vh 1px white,
+    22vw 22vh 1px white,
+    28vw 12vh 2px white,
+    32vw 32vh 1px white,
+    38vw 18vh 2px white,
+    42vw 35vh 1px white,
+    48vw 25vh 2px white,
+    53vw 42vh 1px white,
+    58vw 15vh 2px white,
+    63vw 38vh 1px white,
+    68vw 28vh 2px white,
+    73vw 45vh 1px white,
+    78vw 32vh 2px white,
+    83vw 48vh 1px white,
+    88vw 20vh 2px white,
+    93vw 52vh 1px white,
+    98vw 35vh 2px white,
+    5vw 60vh 1px white,
+    12vw 65vh 2px white,
+    18vw 72vh 1px white,
+    25vw 78vh 2px white,
+    30vw 85vh 1px white,
+    35vw 68vh 2px white,
+    40vw 82vh 1px white,
+    45vw 92vh 2px white,
+    50vw 75vh 1px white,
+    55vw 88vh 2px white,
+    60vw 95vh 1px white,
+    65vw 72vh 2px white,
+    70vw 85vh 1px white,
+    75vw 78vh 2px white,
+    80vw 92vh 1px white,
+    85vw 82vh 2px white,
+    90vw 88vh 1px white,
+    95vw 75vh 2px white;
+  animation: twinkle 8s infinite linear;
 }
-  
+
 .shooting-star {
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, white, transparent);
-    animation: shoot 3s infinite ease-in;
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 3s infinite ease-in;
 }
 
 .shooting-star:nth-child(1) {
-    top: 20%;
-    left: -100px;
-    animation-delay: 0s;
+  top: 20%;
+  left: -100px;
+  animation-delay: 0s;
 }
 
 .shooting-star:nth-child(2) {
-    top: 35%;
-    left: -100px;
-    animation-delay: 1s;
+  top: 35%;
+  left: -100px;
+  animation-delay: 1s;
 }
 
 .shooting-star:nth-child(3) {
-    top: 50%;
-    left: -100px;
-    animation-delay: 2s;
+  top: 50%;
+  left: -100px;
+  animation-delay: 2s;
 }
 
 @keyframes twinkle {
-    0%,
-    100% {
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 0.4;
-    }
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 @keyframes shoot {
-    0% {
-        transform: translateX(0) translateY(0) rotate(25deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(120vw) translateY(50vh) rotate(25deg);
-        opacity: 0;
-    }
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) translateY(50vh) rotate(25deg);
+    opacity: 0;
+  }
 }
 
 /* Additional twinkling stars with different animation timing */
 .stars::after {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background: white;
-    box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
-    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
-    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
-    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
-    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
-    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
-    51vw 92vh 2px white, 59vw 78vh 1px white;
-    animation: twinkle 6s infinite linear reverse;
-}  
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow:
+    8vw 12vh 2px white,
+    16vw 18vh 1px white,
+    24vw 25vh 2px white,
+    33vw 15vh 1px white,
+    41vw 28vh 2px white,
+    49vw 35vh 1px white,
+    57vw 22vh 2px white,
+    65vw 42vh 1px white,
+    73vw 28vh 2px white,
+    81vw 48vh 1px white,
+    89vw 32vh 2px white,
+    97vw 45vh 1px white,
+    3vw 68vh 2px white,
+    11vw 75vh 1px white,
+    19vw 82vh 2px white,
+    27vw 88vh 1px white,
+    35vw 72vh 2px white,
+    43vw 85vh 1px white,
+    51vw 92vh 2px white,
+    59vw 78vh 1px white;
+  animation: twinkle 6s infinite linear reverse;
+}
 
-input, button {
-    border: none;
+input,
+button {
+  border: none;
 }
 
 button:hover {
-    cursor: pointer;
-    filter: brightness(90%);
+  cursor: pointer;
+  filter: brightness(90%);
 }
 
 .card {
-    background-color: rgba(255,255,255,0.5);
-    padding: 12.5px 15px;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 12.5px 15px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 
-    &.showResult {
-        border-radius: 15px;
-    }
+  &.showResult {
+    border-radius: 15px;
+  }
 }
 
 .search-area {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .search-bar {
-    padding: 5px 10px;
-    border-radius: 50px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fa-search {
-    border-radius: 50px;
-    padding: 7px 7px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 50px;
+  padding: 7px 7px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .result {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    
-    &.hide {
-        display: none;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  &.hide {
+    display: none;
+  }
 }
 
 /* The switch - the box around the slider */
 .switch {
-    margin-top: 10px;
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 .switch.hide {
-    display: none;
+  display: none;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .unit-label {
-    position: absolute;
-    left: 10px; /* Position it to the left of the slider */
-    z-index: 1000;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    pointer-events: none; /* Prevent interaction */
+  position: absolute;
+  left: 10px; /* Position it to the left of the slider */
+  z-index: 1000;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  pointer-events: none; /* Prevent interaction */
 }
 
 /* The slider */
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider::before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider::after {
-    content: "°C"; /* Text for Fahrenheit */
-    position: absolute;
-    right: 12.5px; /* Position it on the right side */
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    pointer-events: none; /* Prevent interaction */
+  content: "°C"; /* Text for Fahrenheit */
+  position: absolute;
+  right: 12.5px; /* Position it on the right side */
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  pointer-events: none; /* Prevent interaction */
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  padding: 10px 0;
 }
