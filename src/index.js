@@ -145,12 +145,14 @@ async function getWeatherData(location) {
 searchBtn.addEventListener("click", () => {
   let location = searchBar.value.toLowerCase();
   getWeatherData(location);
+  searchBar.blur();
 });
 
 searchBar.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     let location = searchBar.value.toLowerCase();
     getWeatherData(location);
+    searchBar.blur();
   }
 });
 
